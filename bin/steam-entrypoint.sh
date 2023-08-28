@@ -125,10 +125,10 @@ fi
 
 may_update
 
-exec "${ARKMANAGER}" start @all
+${ARKMANAGER} start @all
 
 while true
 do
-	exec "${ARKMANAGER}" status @all
+	${ARKMANAGER} status @all
 	sleep 60
 done
