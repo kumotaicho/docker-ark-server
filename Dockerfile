@@ -1,13 +1,17 @@
 FROM        cm2network/steamcmd:root
 
-LABEL       MAINTAINER="https://github.com/Hermsi1337/"
+LABEL       MAINTAINER="https://github.com/kumotaicho/"
 
 ARG         ARK_TOOLS_VERSION="1.6.61a"
 ARG         IMAGE_VERSION="dev"
 
 ENV         IMAGE_VERSION="${IMAGE_VERSION}" \
-            SESSION_NAME="Dockerized ARK Server by github.com/hermsi1337" \
-            SERVER_MAP="TheIsland" \
+            SESSION_NAME="Dockerized ARK Server by github.com/kumotaicho" \
+            SERVER_MAP1="TheIsland" \
+            SERVER_MAP2="" \
+            SERVER_MAP3="" \
+            SERVER_MAP4="" \
+            SERVER_MAP5="" \
             SERVER_PASSWORD="YouShallNotPass" \
             ADMIN_PASSWORD="Th155houldD3f1n3tlyB3Chang3d" \
             MAX_PLAYERS="20" \
@@ -19,10 +23,26 @@ ENV         IMAGE_VERSION="${IMAGE_VERSION}" \
             ARK_TOOLS_VERSION="${ARK_TOOLS_VERSION}" \
             ARK_SERVER_VOLUME="/app" \
             TEMPLATE_DIRECTORY="/conf.d" \
-            GAME_CLIENT_PORT="7777" \
-            UDP_SOCKET_PORT="7778" \
-            RCON_PORT="27020" \
-            SERVER_LIST_PORT="27015" \
+            GAME_CLIENT_PORT_MAP1="27011" \
+            UDP_SOCKET_PORT_MAP1="27012" \
+            SERVER_LIST_PORT_MAP1="27013" \
+            RCON_PORT_MAP1="27014" \
+            GAME_CLIENT_PORT_MAP2="27021" \
+            UDP_SOCKET_PORT_MAP2="27022" \
+            SERVER_LIST_PORT_MAP2="27023" \
+            RCON_PORT_MAP2="27024" \
+            GAME_CLIENT_PORT_MAP3="27031" \
+            UDP_SOCKET_PORT_MAP3="27032" \
+            SERVER_LIST_PORT_MAP3="27033" \
+            RCON_PORT_MAP3="27034" \
+            GAME_CLIENT_PORT_MAP4="27041" \
+            UDP_SOCKET_PORT_MAP4="27042" \
+            SERVER_LIST_PORT_MAP4="27043" \
+            RCON_PORT_MAP4="27044" \
+            GAME_CLIENT_PORT_MAP5="27051" \
+            UDP_SOCKET_PORT_MAP5="27052" \
+            SERVER_LIST_PORT_MAP5="27053" \
+            RCON_PORT_MAP5="27054" \
             STEAM_HOME="/home/${USER}" \
             STEAM_USER="${USER}" \
             STEAM_LOGIN="anonymous"
@@ -52,7 +72,26 @@ RUN         set -x && \
 COPY        bin/    /
 COPY        conf.d  ${TEMPLATE_DIRECTORY}
 
-EXPOSE      ${GAME_CLIENT_PORT}/udp ${UDP_SOCKET_PORT}/udp ${SERVER_LIST_PORT}/udp ${RCON_PORT}/tcp
+EXPOSE      ${GAME_CLIENT_PORT_MAP1}/udp \
+            ${UDP_SOCKET_PORT_MAP1}/udp \
+            ${SERVER_LIST_PORT_MAP1}/udp \
+            ${RCON_PORT_MAP1}/tcp \
+            ${GAME_CLIENT_PORT_MAP2}/udp \
+            ${UDP_SOCKET_PORT_MAP2}/udp \
+            ${SERVER_LIST_PORT_MAP2}/udp \
+            ${RCON_PORT_MAP2}/tcp \
+            ${GAME_CLIENT_PORT_MAP3}/udp \
+            ${UDP_SOCKET_PORT_MAP3}/udp \
+            ${SERVER_LIST_PORT_MAP3}/udp \
+            ${RCON_PORT_MAP3}/tcp \
+            ${GAME_CLIENT_PORT_MAP4}/udp \
+            ${UDP_SOCKET_PORT_MAP4}/udp \
+            ${SERVER_LIST_PORT_MAP4}/udp \
+            ${RCON_PORT_MAP4}/tcp \
+            ${GAME_CLIENT_PORT_MAP5}/udp \
+            ${UDP_SOCKET_PORT_MAP5}/udp \
+            ${SERVER_LIST_PORT_MAP5}/udp \
+            ${RCON_PORT_MAP5}/tcp
 
 VOLUME      ["${ARK_SERVER_VOLUME}"]
 WORKDIR     ${ARK_SERVER_VOLUME}

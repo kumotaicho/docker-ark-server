@@ -59,7 +59,7 @@ echo "_______________________________________"
 
 ARKMANAGER="$(command -v arkmanager)"
 [[ -x "${ARKMANAGER}" ]] || (
-  echo "Arkamanger is missing"
+  echo "Arkmanager is missing"
   exit 1
 )
 
@@ -69,9 +69,23 @@ echo "Setting up folder and file structure..."
 create_missing_dir "${ARK_SERVER_VOLUME}/log" "${ARK_SERVER_VOLUME}/backup" "${ARK_SERVER_VOLUME}/staging"
 
 # copy from template to server volume
-copy_missing_file "${TEMPLATE_DIRECTORY}/arkmanager.cfg" "${ARK_TOOLS_DIR}/arkmanager.cfg"
-copy_missing_file "${TEMPLATE_DIRECTORY}/arkmanager-user.cfg" "${ARK_TOOLS_DIR}/instances/main.cfg"
 copy_missing_file "${TEMPLATE_DIRECTORY}/crontab" "${ARK_SERVER_VOLUME}/crontab"
+copy_missing_file "${TEMPLATE_DIRECTORY}/arkmanager.cfg" "${ARK_TOOLS_DIR}/arkmanager.cfg"
+if [[ -n "${SERVER_MAP1}" ]]; then
+  copy_missing_file "${TEMPLATE_DIRECTORY}/arkmanager-Map1.cfg" "${ARK_TOOLS_DIR}/instances/Map1.cfg"
+fi
+if [[ -n "${SERVER_MAP2}" ]]; then
+  copy_missing_file "${TEMPLATE_DIRECTORY}/arkmanager-Map2.cfg" "${ARK_TOOLS_DIR}/instances/Map2.cfg"
+fi
+if [[ -n "${SERVER_MAP3}" ]]; then
+  copy_missing_file "${TEMPLATE_DIRECTORY}/arkmanager-Map3.cfg" "${ARK_TOOLS_DIR}/instances/Map3.cfg"
+fi
+if [[ -n "${SERVER_MAP4}" ]]; then
+  copy_missing_file "${TEMPLATE_DIRECTORY}/arkmanager-Map4.cfg" "${ARK_TOOLS_DIR}/instances/Map4.cfg"
+fi
+if [[ -n "${SERVER_MAP5}" ]]; then
+  copy_missing_file "${TEMPLATE_DIRECTORY}/arkmanager-Map5.cfg" "${ARK_TOOLS_DIR}/instances/Map5.cfg"
+fi
 
 [[ -L "${ARK_SERVER_VOLUME}/Game.ini" ]] ||
   ln -s ./server/ShooterGame/Saved/Config/LinuxServer/Game.ini Game.ini
@@ -82,7 +96,6 @@ if [[ ! -d ${ARK_SERVER_VOLUME}/server ]] || [[ ! -f ${ARK_SERVER_VOLUME}/server
   echo "No game files found. Installing..."
 
   create_missing_dir \
-    "${ARK_SERVER_VOLUME}/server/ShooterGame/Saved/SavedArks" \
     "${ARK_SERVER_VOLUME}/server/ShooterGame/Content/Mods" \
     "${ARK_SERVER_VOLUME}/server/ShooterGame/Binaries/Linux"
 
