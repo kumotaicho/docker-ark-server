@@ -125,5 +125,5 @@ fi
 
 may_update
 
-exec "${ARKMANAGER}" start @all
+exec "${ARKMANAGER}" start --verbose @all 2>&1
 exit 0
