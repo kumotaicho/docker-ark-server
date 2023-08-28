@@ -22,7 +22,7 @@ jobs:
     - name: Build the Docker image
       env:
         DOCKER_IMAGE: kumotaicho/ark-server
-      run: docker build . --file Dockerfile --tag $DOCKER_IMAGE:$(date %s) --tag $DOCKER_IMAGE
+      run: docker build . --file Dockerfile --tag $DOCKER_IMAGE:$(date +%s) --tag $DOCKER_IMAGE
     - name: Push the Docker image
       env:
         DOCKER_IMAGE: kumotaicho/ark-server
