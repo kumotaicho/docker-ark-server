@@ -20,6 +20,10 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag kumotaicho/ark-server:${{ github.sha }}
+      env:
+        DOCKER_IMAGE: kumotaicho/ark-server
+      run: docker build . --file Dockerfile --tag $DOCKER_IMAGE:$(date %s) --tag $DOCKER_IMAGE
     - name: Push the Docker image
-      run: docker push kumotaicho/ark-server:${{ github.sha }}
+      env:
+        DOCKER_IMAGE: kumotaicho/ark-server
+      run: docker push --all-tags $DOCKER_IMAGE
