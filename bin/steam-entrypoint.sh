@@ -112,4 +112,4 @@ fi
 
 may_update
 
-exec "${ARKMANAGER}" run --verbose ${args[@]}
+exec "${ARKMANAGER}" run --verbose @all
