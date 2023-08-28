@@ -36,6 +36,7 @@ The basic configuration of your server is done by using environment variables wh
 |    SERVER_PASSWORD    |                YouShallNotPass                 | Server password which is required to join your session. (overwrite with empty string if you want to disable password authentication) |
 |    ADMIN_PASSWORD     |          Th155houldD3f1n3tlyB3Chang3d          |                                      Admin-password in order to access the admin console of ARK                                      |
 |      MAX_PLAYERS      |                       20                       |                                            Maximum number of players to join your session                                            |
+|      CLUSTER_ID       |                  myclusterid                   |                                          The cluster identifier to use to link your servers                                          |
 |    UPDATE_ON_START    |                     false                      |                                    Whether you want to update the ARK-server upon startup or not                                     |
 |    BACKUP_ON_STOP     |                     false                      |                                      Create a backup before gracefully stopping the ARK-server                                       |
 |   PRE_UPDATE_BACKUP   |                      true                      |                                              Create a backup before updating ARK-server                                              |
@@ -43,26 +44,26 @@ The basic configuration of your server is done by using environment variables wh
 |   ENABLE_CROSSPLAY    |                     false                      |                  Enable crossplay. When enabled battleye should be disabled as it likes to disconnect epic players                   |
 |   DISABLE_BATTLEYE    |                     false                      |                                                     Disable Battleye protection                                                      |
 |   ARK_SERVER_VOLUME   |                      /app                      |                                                Path where the server-files are stored                                                |
-| GAME_CLIENT_PORT_MAP1 |                     27011                      |                                                  Exposed game-client port for Map1                                                   |
-| UDP_SOCKET_PORT_MAP1  |                     27012                      |                                      Raw UDP socket port for Map1 (always Game client port +1)                                       |
-| SERVER_LIST_PORT_MAP1 |                     27013                      |                                                  Exposed server-list port for Map1                                                   |
-|    RCON_PORT_MAP1     |                     27014                      |                                                      Exposed RCON port for Map1                                                      |
-| GAME_CLIENT_PORT_MAP2 |                     27021                      |                                                  Exposed game-client port for Map2                                                   |
-| UDP_SOCKET_PORT_MAP2  |                     27022                      |                                      Raw UDP socket port for Map2 (always Game client port +1)                                       |
-| SERVER_LIST_PORT_MAP2 |                     27023                      |                                                  Exposed server-list port for Map2                                                   |
-|    RCON_PORT_MAP2     |                     27024                      |                                                      Exposed RCON port for Map2                                                      |
-| GAME_CLIENT_PORT_MAP3 |                     27031                      |                                                  Exposed game-client port for Map3                                                   |
-| UDP_SOCKET_PORT_MAP3  |                     27032                      |                                      Raw UDP socket port for Map3 (always Game client port +1)                                       |
-| SERVER_LIST_PORT_MAP3 |                     27033                      |                                                  Exposed server-list port for Map3                                                   |
-|    RCON_PORT_MAP3     |                     27034                      |                                                      Exposed RCON port for Map3                                                      |
-| GAME_CLIENT_PORT_MAP4 |                     27041                      |                                                  Exposed game-client port for Map4                                                   |
-| UDP_SOCKET_PORT_MAP4  |                     27042                      |                                      Raw UDP socket port for Map4 (always Game client port +1)                                       |
-| SERVER_LIST_PORT_MAP4 |                     27043                      |                                                  Exposed server-list port for Map4                                                   |
-|    RCON_PORT_MAP4     |                     27044                      |                                                      Exposed RCON port for Map4                                                      |
-| GAME_CLIENT_PORT_MAP5 |                     27051                      |                                                  Exposed game-client port for Map5                                                   |
-| UDP_SOCKET_PORT_MAP5  |                     27052                      |                                      Raw UDP socket port for Map5 (always Game client port +1)                                       |
-| SERVER_LIST_PORT_MAP5 |                     27053                      |                                                  Exposed server-list port for Map5                                                   |
-|    RCON_PORT_MAP5     |                     27054                      |                                                      Exposed RCON port for Map5                                                      |
+| GAME_CLIENT_PORT_MAP1 |                      7777                      |                                                  Exposed game-client port for Map1                                                   |
+| UDP_SOCKET_PORT_MAP1  |                      7778                      |                                      Raw UDP socket port for Map1 (always Game client port +1)                                       |
+| SERVER_LIST_PORT_MAP1 |                     27015                      |                                                  Exposed server-list port for Map1                                                   |
+|    RCON_PORT_MAP1     |                     27020                      |                                                      Exposed RCON port for Map1                                                      |
+| GAME_CLIENT_PORT_MAP2 |                      7779                      |                                                  Exposed game-client port for Map2                                                   |
+| UDP_SOCKET_PORT_MAP2  |                      7780                      |                                      Raw UDP socket port for Map2 (always Game client port +1)                                       |
+| SERVER_LIST_PORT_MAP2 |                     27016                      |                                                  Exposed server-list port for Map2                                                   |
+|    RCON_PORT_MAP2     |                     27021                      |                                                      Exposed RCON port for Map2                                                      |
+| GAME_CLIENT_PORT_MAP3 |                      7781                      |                                                  Exposed game-client port for Map3                                                   |
+| UDP_SOCKET_PORT_MAP3  |                      7782                      |                                      Raw UDP socket port for Map3 (always Game client port +1)                                       |
+| SERVER_LIST_PORT_MAP3 |                     27017                      |                                                  Exposed server-list port for Map3                                                   |
+|    RCON_PORT_MAP3     |                     27022                      |                                                      Exposed RCON port for Map3                                                      |
+| GAME_CLIENT_PORT_MAP4 |                      7783                      |                                                  Exposed game-client port for Map4                                                   |
+| UDP_SOCKET_PORT_MAP4  |                      7784                      |                                      Raw UDP socket port for Map4 (always Game client port +1)                                       |
+| SERVER_LIST_PORT_MAP4 |                     27018                      |                                                  Exposed server-list port for Map4                                                   |
+|    RCON_PORT_MAP4     |                     27023                      |                                                      Exposed RCON port for Map4                                                      |
+| GAME_CLIENT_PORT_MAP5 |                      7785                      |                                                  Exposed game-client port for Map5                                                   |
+| UDP_SOCKET_PORT_MAP5  |                      7786                      |                                      Raw UDP socket port for Map5 (always Game client port +1)                                       |
+| SERVER_LIST_PORT_MAP5 |                     27019                      |                                                  Exposed server-list port for Map5                                                   |
+|    RCON_PORT_MAP5     |                     27024                      |                                                      Exposed RCON port for Map5                                                      |
 |     GAME_MOD_IDS      |                    `empty`                     |           Additional game-mods you want to install, seperated by comma. (e.g. GAME_MOD_IDS=487516323,487516324,487516325)            |
 
 #### Get things runnning

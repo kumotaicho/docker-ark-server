@@ -125,4 +125,4 @@ fi
 
 may_update
 
-exec "${ARKMANAGER}" run --verbose @all
+exec "${ARKMANAGER}" start @all
