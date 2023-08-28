@@ -126,3 +126,4 @@ fi
 may_update
 
 exec "${ARKMANAGER}" start @all
+exit 0
