@@ -125,5 +125,10 @@ fi
 
 may_update
 
-exec "${ARKMANAGER}" start --verbose @all 2>&1
-exit 0
+exec "${ARKMANAGER}" start @all
+
+while true
+do
+	exec "${ARKMANAGER}" status @all
+	sleep 60
+done
